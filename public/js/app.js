@@ -4,7 +4,7 @@ const messageOne = document.querySelector("#message-1");
 const messageTwo = document.querySelector("#message-2");
 
 const fetchForecast = (search) => {
-  fetch(`http://localhost:3000/weather?address=${search}`).then((response) => {
+  fetch(`/weather?address=${search}`).then((response) => {
     // if (!response) {
     //   return "Error: Cannot reach server.";
     // }
@@ -28,5 +28,6 @@ weatherForm.addEventListener('submit', (event) => {
   messageTwo.textContent = "Searching...";
 
   const location = search.value;
-  const results = fetchForecast(location);
+  
+  fetchForecast(location); //results
 })
